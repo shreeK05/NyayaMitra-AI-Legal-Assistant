@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== MODERN COLOR VARIABLES ========== */
+@layer base {
+  :root {
+    --color-primary: 59, 130, 246;
+    --color-secondary: 139, 92, 246;
+    --color-accent: 249, 115, 22;
+    --color-success: 34, 197, 94;
+    --color-danger: 239, 68, 68;
+    --color-warning: 245, 158, 11;
+  }
+}
+
+/* ========== ENHANCED ANIMATIONS ========== */
+@layer utilities {
+  /* Bounce Animation */
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25%);
+    }
+  }
+
+  /* Smooth fade-in animation */
+  .animate-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Smooth slide-in from top */
+  .slide-in-from-top {
+    animation: slideInFromTop 0.4s ease-out;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Smooth slide-in from bottom */
+  .slide-in-from-bottom {
+    animation: slideInFromBottom 0.5s ease-out;
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Gavel swing animation */
+  @keyframes gavel-swing {
+    0%, 100% {
+      transform: rotateZ(-30deg);
+    }
+    50% {
+      transform: rotateZ(30deg);
+    }
+  }
+
+  .gavel-animation {
+    animation: gavel-swing 1s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  /* Pulse glow effect */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Scale pulse */
+  @keyframes scale-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .scale-pulse {
+    animation: scale-pulse 2s ease-in-out infinite;
+  }
+
+  /* Shimmer loading effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Gradient shift animation */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Bounce in animation */
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Flip animation */
+  @keyframes flip {
+    0% {
+      transform: perspective(400px) rotateY(0);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg);
+    }
+  }
+
+  .animate-flip {
+    animation: flip 0.6s ease-in-out;
+  }
+
+  /* Rotate in animation */
+  @keyframes rotate-in {
+    from {
+      transform: rotate(-10deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-rotate-in {
+    animation: rotate-in 0.5s ease-out;
+  }
+
+  /* Blur in animation */
+  @keyframes blur-in {
+    from {
+      filter: blur(10px);
+      opacity: 0;
+    }
+    to {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-blur-in {
+    animation: blur-in 0.6s ease-out;
+  }
+
+  /* Text wave animation */
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 1.5s ease-in-out infinite;
+  }
+}
+
+/* ========== ENHANCED COMPONENTS ========== */
+@layer components {
+  /* Glass morphism effect */
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/30 border border-white/20;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  /* Card with hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:scale-105;
+  }
+
+  /* Button base styles */
+  .btn-base {
+    @apply font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply btn-base bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 active:scale-95 shadow-lg hover:shadow-xl;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply btn-base bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 active:scale-95 shadow-lg hover:shadow-xl;
+  }
+
+  /* Success button */
+  .btn-success {
+    @apply btn-base bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 active:scale-95;
+  }
+
+  /* Danger button */
+  .btn-danger {
+    @apply btn-base bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 active:scale-95;
+  }
+
+  /* Input focus effect */
+  .input-focus {
+    @apply focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white transition-all;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t-2 border-gradient-to-r from-transparent via-blue-300 to-transparent;
+  }
+}
+
+/* ========== RESPONSIVE ENHANCEMENTS ========== */
+@media (max-width: 768px) {
+  .hide-mobile {
+    @apply hidden;
+  }
+
+  .card-hover {
+    @apply hover:scale-100;
+  }
+}
+
+/* ========== SMOOTH SCROLLING ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
